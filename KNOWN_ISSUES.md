@@ -1,9 +1,8 @@
 # KNOWN_ISSUES
 
 ## Sin verificar (alta prioridad)
-1. **Nada se ha compilado ni ejecutado.** Puede haber errores de tipos, sobre todo en llamadas a Fabric 6 (`setDimensions` con `cssOnly`, `toCanvasElement`, `backgroundImage`, opciones de `Textbox`). Lo revelará el primer CI.
-2. **Sin `package-lock.json`.** El CI usa `npm install`; las versiones se resuelven por rangos (`^`). Hay que generar y subir el lockfile.
-3. **Gestos táctiles** (mover/escalar con el lienzo escalado por CSS) sin probar en Android.
+1. **Comportamiento en navegador.** El CI confirma que tipos, pruebas y build pasan, pero nadie ha abierto la app. Riesgos concretos: escalado CSS del lienzo de Fabric con gestos táctiles, `toCanvasElement` con multiplicador alto, descarga de archivos en Android.
+2. **Sin `package-lock.json`.** El CI usa `npm install` y las versiones se resuelven por rangos (`^`), así que una compilación futura puede cambiar. Hay que generar y subir el lockfile (requiere acceso a npm) y pasar el CI a `npm ci`.
 
 ## Limitaciones conocidas
 - Durante el arrastre de una esquina el texto se ve estirado hasta soltar; al soltar se convierte en tamaño de fuente real.

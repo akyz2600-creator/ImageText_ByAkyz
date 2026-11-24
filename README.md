@@ -2,7 +2,7 @@
 
 Editor sencillo y profesional de textos sobre imágenes, optimizado para Android y usable en escritorio. Todo se procesa en el dispositivo: sin cuentas, sin backend, sin publicidad.
 
-> **Estado:** código completo de la primera versión, **pendiente de verificar en CI** (ver `PROJECT_STATUS.md`).
+> **Estado:** primera versión completa; tipos, pruebas y compilación verificados en CI. Falta probarla en un navegador/Android real (ver `PROJECT_STATUS.md`).
 
 ## Funciones
 

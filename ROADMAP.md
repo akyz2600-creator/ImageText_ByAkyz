@@ -1,7 +1,7 @@
 # ROADMAP
 
 ## Fase 1 — Verificación (siguiente)
-- [ ] Primer CI en verde (typecheck, pruebas, build).
+- [x] Primer CI en verde (typecheck, pruebas, build) — 2026-11-24.
 - [ ] Generar y subir `package-lock.json`; cambiar el CI a `npm ci` con caché.
 - [ ] Probar importación de imagen, textos, fuentes y exportación en Android (Chrome) y escritorio.
 - [ ] Confirmar que el arrastre/escalado táctil funciona con el escalado CSS del lienzo.
