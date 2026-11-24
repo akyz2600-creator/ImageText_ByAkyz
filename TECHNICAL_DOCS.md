@@ -25,6 +25,11 @@ src/
 - **Fuentes propias.** Se validan por extensión (TTF, OTF, WOFF, WOFF2) y se comprueban cargándolas con `FontFace`. Cada una recibe una familia CSS única `userfont-<id>`. Se guardan en IndexedDB (`imagetext-byakyz` v1, almacén `fonts`, clave `id`) con `lastUsedAt`; se conservan las 20 más recientes. Si IndexedDB no está disponible, la fuente funciona solo en la sesión y se avisa.
 - **Retina.** `enableRetinaScaling: false` para no multiplicar la memoria del lienzo en pantallas de alta densidad.
 
+## APK (Capacitor)
+
+- `capacitor.config.json` (`com.akyz.imagetext`, `webDir: dist`). La carpeta `android/` no se versiona: el workflow la genera con `npx cap add android` y compila con `./gradlew assembleDebug` (JDK 21).
+- `src/lib/save.ts`: en web descarga con enlace; en el APK escribe el archivo en la caché (`@capacitor/filesystem`) y abre Compartir (`@capacitor/share`), porque el WebView no descarga blobs.
+
 ## Pruebas
 
 Vitest (entorno node) cubre la lógica pura: `files.test.ts` y `fonts.test.ts`. El editor y la UI dependen del DOM/canvas y **no tienen pruebas automáticas todavía**.

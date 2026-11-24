@@ -26,6 +26,10 @@ npm test           # pruebas unitarias
 npm run build      # genera dist/
 ```
 
+## APK de Android
+
+El workflow `.github/workflows/android-apk.yml` empaqueta la web con Capacitor y publica `ImageText-debug.apk` en la página de **Releases** del repositorio (también como artefacto de la ejecución). Se ejecuta en cada push a `main` o a mano desde la pestaña Actions. Es un APK de depuración: al instalarlo, Android pedirá permitir "instalar apps desconocidas". En el APK, exportar abre el menú nativo de Compartir/Guardar.
+
 ## Despliegue en Cloudflare Pages
 
 - Comando de compilación: `npm run build`

@@ -12,4 +12,6 @@
 - Documentación `.md`.
 - Commit `8baa2ad` subido a `main`; CI en verde (typecheck, pruebas, build).
 
+**Añadido a petición del usuario (APK):** Capacitor, workflow `android-apk.yml` que publica el APK en Releases y guardado nativo (`save.ts`). Ver resultado de la ejecución en Actions.
+
 **Pendiente:** prueba en navegador/Android, `package-lock.json`, despliegue en Cloudflare Pages.

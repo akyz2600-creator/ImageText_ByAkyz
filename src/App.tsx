@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ChangeEvent } from 'react';
 import { Editor } from './lib/editor';
 import type { TextAlign, TextState } from './lib/editor';
-import { downloadBlob, isSupportedImage } from './lib/files';
+import { isSupportedImage } from './lib/files';
+import { saveOutput } from './lib/save';
 import {
   importFontFile,
   isUserFontFamily,
@@ -131,7 +132,7 @@ export function App() {
     await new Promise((r) => requestAnimationFrame(() => r(null)));
     try {
       const res = kind === 'jpeg' ? await editor.exportJpeg() : await editor.exportPdf();
-      downloadBlob(res.blob, res.fileName);
+      await saveOutput(res.blob, res.fileName);
       showToast(
         res.reduced
           ? `Exportado a ${res.width}×${res.height}px (reducido por límite de memoria).`
